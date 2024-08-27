@@ -7,13 +7,23 @@
 body{
     background-color: bisque;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
     height: 700px;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+    
+}
+li {
+    list-style-type: none;
+}
+
+
 #content {
+
+    margin: auto;
     border: 1px black solid ;
     border-radius: 20px;
     background-color: burlywood;
