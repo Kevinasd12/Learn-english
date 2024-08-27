@@ -1,12 +1,12 @@
 
 let words = [
-    {"Hello" : "Hola"},
+    {"Hello" : ["Hola"] },
     {"Again" : "De nuevo" },
-    {"Food" : "Comida"},
+    {"Food" : ["Comida", "Alimento"]},
     {"Child" : "Niño"},
     {"Woman" : "Mujer"},
     {"Mother" : "Madre"},
-    {"Father" : "Padre" },
+    {"Father" : ["Padre", "Padres"] },
     {"People" : "Personas"},
     {"Son" : "Hijo"},
     {"Love" : "Amor"},
@@ -17,14 +17,11 @@ let words = [
 
 
 
-
 let indexCorrect = 0
 let indexIncorrect = 0
 let wordKey = ""
-let wordValue = ""
+let wordValues = ""
 let contador = 0
-
-
 
 
 // input word
@@ -53,9 +50,11 @@ function capitalize(texto) {
 
 
 //initialize buttons 
-botonStart.onclick = starting;
-nextWord.onclick = ouputNextWord;
+botonStart.addEventListener('click', starting)
+nextWord.addEventListener('click', ouputNextWord)
 document.getElementById('check').addEventListener('click', checking)
+
+
 
 function locations(int) {
     //start
@@ -97,7 +96,7 @@ function starting() {
 
 /* funcion that start random words, and input words in two variables  
 wordKey = palabra en ingles
-wordValue = palabra en spanish 
+wordValues = palabra en spanish 
 */
 function ouputNextWord() {
     locations(0)
@@ -106,11 +105,11 @@ function ouputNextWord() {
     
     words.forEach(word => {
         let key = Object.keys(word)[0]
-        let value = word[key]
+        let values = word[key]
         contador++
         if (contador === numberRandomWord){
             wordKey = key
-            wordValue = value
+            wordValues = values
             wordEnglish.innerText = wordKey
         }
         else {
@@ -122,8 +121,9 @@ function ouputNextWord() {
 // check if your spanish word is good write.
 function checking() {
     const checkWord = inputWord.value.trim()
-    // Verificar si la palabra es correcta
-    if (capitalize(checkWord) === wordValue) { 
+    
+    // check if checkWord is includes in word
+    if (wordValues.includes(capitalize(checkWord)) == true) { 
         indexCorrect++
         locations(1);
         inputWord.value = '';
@@ -134,5 +134,3 @@ function checking() {
     }
 
 }
-
-
