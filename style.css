@@ -20,7 +20,6 @@ li {
     list-style-type: none;
 }
 
-
 #content {
 
     margin: auto;
@@ -85,8 +84,6 @@ h4 {
     border: 1px black solid ;
     border-radius: 4px;
 }
-
-
 
 #container-msj{
     display: flex;
