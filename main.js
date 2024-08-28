@@ -5,7 +5,7 @@ let words = [
     { Teeth: ["Dientes"] },
     { Tooth: ["Diente"] },
     { Arm: ["Brazo"] },
-    { Most: ["Lamayoria", "Elmayornumero", "Elmaximo"] },
+    { Most: ["Lamayoria", "Mayoria", "Elmayornumero", "Elmaximo"] },
     { Even: ["Incluso", "Aún", "Parejo", "Aun"] },
     { Way: ["Camino", "Manera", "Método", "Metodo"] },
 ];
