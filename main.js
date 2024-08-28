@@ -1,10 +1,13 @@
 
 let words = [
-    { "Honeymoon ": ["Luna de miel"] },
-    { "Mouth": ["Boca"] },
-    { "Teeth": ["Dientes"] },
-    { "Tooth": ["Diente"] },
-    { "Arm": ["Brazo"] },
+    { Honeymoon: ["Lunademiel"] },
+    { Mouth: ["Boca"] },
+    { Teeth: ["Dientes"] },
+    { Tooth: ["Diente"] },
+    { Arm: ["Brazo"] },
+    { Most: ["Lamayoria", "Elmayornumero", "Elmaximo"] },
+    { Even: ["Incluso", "Aún", "Parejo", "Aun"] },
+    { Way: ["Camino", "Manera", "Método", "Metodo"] },
 ];
 
 let indexCorrect = 0;
@@ -21,11 +24,13 @@ const buttons = document.querySelector(".buttons");
 const nextWord = document.querySelector("#nextWord");
 const botonStart = document.querySelector("#button-start");
 const boxStart = document.querySelector("#start");
-const remplaceInput = document.querySelector(".start");
 // ouputs
 const correctFlex = document.querySelector("#correct");
 const incorrectFlex = document.querySelector("#incorrect");
 const goodLuck = document.querySelector("#good-luck");
+// number solutions
+const numberSolutions = document.getElementById("number-solutions");
+
 
 // número aleatorio
 function getRandomNumber(min, max) {
@@ -45,7 +50,7 @@ document.getElementById("check").addEventListener("click", checking);
 function locations(int) {
     //start
     if (int == 0) {
-        remplaceInput.style.display = "none";
+        
         inputWord.style.display = "flex";
         document.querySelector(".start");
         inputWord.value = "";
@@ -92,17 +97,20 @@ function ouputNextWord() {
         if (contador === numberRandomWord) {
             wordKey = key;
             wordValue = value;
-            wordEnglish.innerText = wordKey;
+            wordEnglish.textContent = wordKey;
         } else {
         }
         
     });
     
+    const lengthValue = wordValue.length
+    numberSolutions.innerHTML =`Your word has ${lengthValue} correct answers`;
 }
 
 // check if your spanish word is good write.
 function checking() {
-    const checkWord = inputWord.value.trim();
+    let checkWord = inputWord.value;
+    checkWord = checkWord.replace(/\s+/g,"");
     // Verificar si la palabra es correcta
     if (wordValue.includes(capitalize(checkWord))) {
         indexCorrect++;
