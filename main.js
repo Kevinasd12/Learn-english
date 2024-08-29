@@ -8,6 +8,12 @@ let words = [
     { Most: ["Lamayoria", "Mayoria", "Elmayornumero", "Elmaximo"] },
     { Even: ["Incluso", "Aún", "Parejo", "Aun"] },
     { Way: ["Camino", "Manera", "Método", "Metodo"] },
+    { Government: ["Gobierno"] },
+    { Appear: ["Aparecer"] },
+    { bring: ["Traer"] },
+    { Develop: ["Desarrollar"] },
+    { Development: ["Desarrollo"] },
+    { Discover: ["Descubrir"] },
 ];
 
 let indexCorrect = 0;
