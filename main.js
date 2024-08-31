@@ -10,10 +10,15 @@ let words = [
     { Way: ["Camino", "Manera", "Método", "Metodo"] },
     { Government: ["Gobierno"] },
     { Appear: ["Aparecer"] },
-    { bring: ["Traer"] },
+    { Bring: ["Traer"] },
     { Develop: ["Desarrollar"] },
     { Development: ["Desarrollo"] },
     { Discover: ["Descubrir"] },
+    { Nested: ["Anidado", "Anidada"] },
+    { Summer: ["Verano"] },
+    { Spring: ["Primavera"] },
+    { Winter: ["Invierno"] },
+    { Weather: ["Tiempo", "Tiempo"] },
 ];
 
 let indexCorrect = 0;
