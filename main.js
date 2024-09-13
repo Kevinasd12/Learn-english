@@ -1,11 +1,10 @@
-
 let words = [
     { Honeymoon: ["Lunademiel"] },
     { Mouth: ["Boca"] },
     { Teeth: ["Dientes"] },
     { Tooth: ["Diente"] },
     { Arm: ["Brazo"] },
-    { Most: ["Lamayoria", "Mayoria", "Elmayornumero", "Elmaximo"] },
+    { Most: ["Lamayoria", "Mayoria", "Elmayornumero", "Maximo"] },
     { Even: ["Incluso", "Aún", "Parejo", "Aun"] },
     { Way: ["Camino", "Manera", "Método", "Metodo"] },
     { Government: ["Gobierno"] },
@@ -19,6 +18,15 @@ let words = [
     { Spring: ["Primavera"] },
     { Winter: ["Invierno"] },
     { Weather: ["Tiempo", "Tiempo"] },
+
+    { Both: ["Ambos", "Ambas"] },
+    { Subway: ["Metro", "Bus subterraneo"] },
+    { Boring: ["Aburrido", "Aburrida"] },
+    { Janitor: ["Conserje"] },
+    { Trying: ["Intentando"] },
+    { Hand: ["Mano"] },
+    { Poor: ["Pobre"] },
+    {News: ['Noticias']}
 ];
 
 let indexCorrect = 0;
@@ -42,7 +50,6 @@ const goodLuck = document.querySelector("#good-luck");
 // number solutions
 const numberSolutions = document.getElementById("number-solutions");
 
-
 // número aleatorio
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -61,7 +68,6 @@ document.getElementById("check").addEventListener("click", checking);
 function locations(int) {
     //start
     if (int == 0) {
-        
         inputWord.style.display = "flex";
         document.querySelector(".start");
         inputWord.value = "";
@@ -103,7 +109,7 @@ function ouputNextWord() {
     words.forEach((word) => {
         let key = Object.keys(word);
         let value = word[key];
-        
+
         contador++;
         if (contador === numberRandomWord) {
             wordKey = key;
@@ -111,17 +117,16 @@ function ouputNextWord() {
             wordEnglish.textContent = wordKey;
         } else {
         }
-        
     });
-    
-    const lengthValue = wordValue.length
-    numberSolutions.innerHTML =`Your word has ${lengthValue} correct answers`;
+
+    const lengthValue = wordValue.length;
+    numberSolutions.innerHTML = `Your word has ${lengthValue} correct answers`;
 }
 
 // check if your spanish word is good write.
 function checking() {
     let checkWord = inputWord.value;
-    checkWord = checkWord.replace(/\s+/g,"");
+    checkWord = checkWord.replace(/\s+/g, "");
     // Verificar si la palabra es correcta
     if (wordValue.includes(capitalize(checkWord))) {
         indexCorrect++;
